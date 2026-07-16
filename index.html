@@ -5,121 +5,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CARES – How to Give Helpful Answers</title>
 
+<meta property="og:title" content="CARES – How to Give Helpful Answers" />
+<meta property="og:description" content="Help others effectively without overwhelming them: Correct (be accurate), Actionable (give next steps), Relevant (answer the specific question), Efficient (keep it brief), and Specific (point to the exact issue)." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#f97316" />
+
 <style>
 :root{
-    --bg:#0f172a;
-    --surface:#1e293b;
-    --surface2:#334155;
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --accent:#38bdf8;
-    --good:#22c55e;
-    --bad:#ef4444;
+    --bg: #1c1917; /* Warm stone-900 */
+    --surface: #292524; /* Warm stone-800 */
+    --surface2: #44403c; /* Warm stone-700 */
+    --text: #fafaf9; /* Warm stone-50 */
+    --muted: #a8a29e; /* Warm stone-400 */
+    --accent: #f97316; /* Warm Orange */
+    --good: #10b981; /* Emerald green */
+    --bad: #f43f5e; /* Rose red */
 }
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
-    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background:linear-gradient(180deg,#0f172a,#020617);
-    color:var(--text);
-    line-height:1.65;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #1c1917, #0c0a09);
+    color: var(--text);
+    line-height: 1.5;
 }
 
 .container{
-    max-width:950px;
-    margin:auto;
-    padding:48px 24px;
+    max-width: 680px; /* Narrower width for a comfortable, single-column reading experience */
+    margin: auto;
+    padding: 32px 16px;
 }
 
 .hero{
-    text-align:center;
-    margin-bottom:64px;
+    text-align: center;
+    margin-bottom: 32px;
 }
 
 .hero h1{
-    font-size:4rem;
-    letter-spacing:.08em;
-    color:var(--accent);
+    font-size: 3rem;
+    letter-spacing: .05em;
+    color: var(--accent);
+    font-weight: 800;
 }
 
 .hero h2{
-    font-size:1.4rem;
-    font-weight:400;
-    color:var(--muted);
-    margin-top:10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 4px;
 }
 
 .hero p{
-    margin-top:30px;
-    color:var(--muted);
-    font-size:1.1rem;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 1rem;
 }
 
-.grid{
-    display:grid;
-    gap:24px;
+.stack{
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Stacked sequentially for logical, top-to-bottom reading */
 }
 
 .card{
-    background:rgba(30,41,59,.8);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:28px;
-    backdrop-filter:blur(10px);
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, .05);
+    border-radius: 6px;
+    padding: 24px;
 }
 
 .card h2{
-    color:var(--accent);
-    margin-bottom:14px;
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
 .card p{
-    color:#dbe4ef;
+    color: #e7e5e4;
+    font-size: 0.95rem;
 }
 
 .example{
-    margin-top:18px;
-    background:#111827;
-    border-left:4px solid var(--accent);
-    padding:16px;
-    border-radius:8px;
-    font-family:monospace;
-    white-space:pre-wrap;
+    margin-top: 12px;
+    background: #0c0a09;
+    border-left: 3px solid var(--accent);
+    padding: 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    font-size: 0.85rem;
 }
 
 .good{
-    color:var(--good);
+    color: var(--good);
+    font-weight: bold;
 }
 
 .bad{
-    color:var(--bad);
+    color: var(--bad);
+    font-weight: bold;
 }
 
 .quote{
-    margin:64px 0;
-    padding:28px;
-    border-radius:16px;
-    text-align:center;
-    background:linear-gradient(135deg,#0284c7,#0369a1);
+    margin: 32px 0;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    background: linear-gradient(135deg, #ea580c, #c2410c);
 }
 
 .quote h2{
-    font-size:2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.quote p{
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 footer{
-    margin-top:70px;
-    text-align:center;
-    color:var(--muted);
+    margin-top: 40px;
+    text-align: center;
+    color: var(--muted);
+    padding: 24px;
+    background: var(--surface);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, .05);
+}
+
+footer h2 {
+    color: var(--accent);
+    font-size: 1.4rem;
 }
 
 a{
-    color:var(--accent);
+    color: var(--accent);
 }
 </style>
 
@@ -143,7 +170,7 @@ the best answers solve the person's problem without overwhelming them.
 <p>Teach more only after you've solved the problem.</p>
 </div>
 
-<div class="grid">
+<div class="stack">
 
 <div class="card">
 <h2>C — Correct</h2>
@@ -259,17 +286,27 @@ Better:
 
 </div>
 
+<div class="card">
+
+<h2>One More Thing</h2>
+
+<p>
+If someone has already answered, avoid repeating them just to speak. Only chime in if their answer is incorrect, incomplete, or needs crucial clarification.
+</p>
+
+</div>
+
 </div>
 
 <footer>
 
 <h2>The CARES Checklist</h2>
 
-<p style="margin-top:20px">
+<p style="margin-top:12px">
 Before sending your message, ask yourself:
 </p>
 
-<p style="margin-top:16px;font-size:1.15rem">
+<p style="margin-top:12px;font-size:1.1rem;line-height:1.8">
 ✔ Is it <strong>Correct</strong>?<br>
 ✔ Is it <strong>Actionable</strong>?<br>
 ✔ Is it <strong>Relevant</strong>?<br>
@@ -277,7 +314,7 @@ Before sending your message, ask yourself:
 ✔ Is it <strong>Specific</strong>?
 </p>
 
-<p style="margin-top:40px">
+<p style="margin-top:24px;font-size:0.9rem;">
 Made for communities that value helpful answers.
 </p>
 
