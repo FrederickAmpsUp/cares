@@ -12,14 +12,15 @@
 
 <style>
 :root{
-    --bg: #1c1917; /* Warm stone-900 */
-    --surface: #292524; /* Warm stone-800 */
-    --surface2: #44403c; /* Warm stone-700 */
-    --text: #fafaf9; /* Warm stone-50 */
-    --muted: #a8a29e; /* Warm stone-400 */
-    --accent: #f97316; /* Warm Orange */
-    --good: #10b981; /* Emerald green */
-    --bad: #f43f5e; /* Rose red */
+    --bg: #1c1917; /* Deep charcoal warm stone */
+    --surface: #292524; /* Card base */
+    --surface-border: #44403c; /* Defined card edges */
+    --text: #fafaf9; /* Warm parchment text */
+    --muted: #a8a29e; 
+    --accent: #f97316; /* Raw orange */
+    --accent-shadow: #7c2d12; /* Dark terracotta shadow */
+    --good: #10b981; 
+    --bad: #f43f5e; 
 }
 
 *{
@@ -30,60 +31,92 @@
 
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: linear-gradient(180deg, #1c1917, #0c0a09);
+    background: #1c1917;
     color: var(--text);
     line-height: 1.5;
 }
 
 .container{
-    max-width: 680px; /* Narrower width for a comfortable, single-column reading experience */
+    max-width: 650px; /* Highly focused reading column */
     margin: auto;
-    padding: 32px 16px;
+    padding: 48px 16px;
 }
 
 .hero{
-    text-align: center;
-    margin-bottom: 32px;
+    text-align: left; /* Asymmetric left alignment for a modern editorial feel */
+    margin-bottom: 40px;
+    border-bottom: 4px double var(--surface-border);
+    padding-bottom: 32px;
 }
 
 .hero h1{
-    font-size: 3rem;
-    letter-spacing: .05em;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
     color: var(--accent);
-    font-weight: 800;
+    line-height: 1;
+    text-shadow: 3px 3px 0px var(--accent-shadow);
 }
 
 .hero h2{
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--muted);
-    margin-top: 4px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 12px;
 }
 
 .hero p{
     margin-top: 16px;
     color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.quote{
+    margin-bottom: 40px;
+    padding: 24px;
+    background: var(--accent);
+    color: #1c1917;
+    border: 3px solid #1c1917;
+    border-radius: 4px;
+    /* Hard solid 3D shadow */
+    box-shadow: 6px 6px 0px var(--accent-shadow);
+}
+
+.quote h2{
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.quote p{
     font-size: 1rem;
+    font-weight: 600;
+    margin-top: 4px;
+    opacity: 0.9;
 }
 
 .stack{
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Stacked sequentially for logical, top-to-bottom reading */
+    gap: 28px;
 }
 
 .card{
     background: var(--surface);
-    border: 1px solid rgba(255, 255, 255, .05);
-    border-radius: 6px;
+    border: 3px solid var(--surface-border);
+    border-radius: 4px;
     padding: 24px;
+    /* Hard solid shadow for tactile depth */
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
+    position: relative;
 }
 
 .card h2{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--accent);
-    margin-bottom: 8px;
-    font-weight: 700;
+    margin-bottom: 12px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
 }
 
 .card p{
@@ -92,10 +125,10 @@ body{
 }
 
 .example{
-    margin-top: 12px;
+    margin-top: 16px;
     background: #0c0a09;
-    border-left: 3px solid var(--accent);
-    padding: 12px;
+    border: 2px solid var(--surface-border);
+    padding: 14px;
     border-radius: 4px;
     font-family: monospace;
     white-space: pre-wrap;
@@ -112,41 +145,24 @@ body{
     font-weight: bold;
 }
 
-.quote{
-    margin: 32px 0;
-    padding: 20px;
-    border-radius: 6px;
-    text-align: center;
-    background: linear-gradient(135deg, #ea580c, #c2410c);
-}
-
-.quote h2{
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-
-.quote p{
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
 footer{
-    margin-top: 40px;
-    text-align: center;
-    color: var(--muted);
-    padding: 24px;
-    background: var(--surface);
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, .05);
+    margin-top: 56px;
+    padding: 32px 24px;
+    background: #12100e;
+    border: 3px solid var(--surface-border);
+    border-radius: 4px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
 footer h2 {
     color: var(--accent);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 900;
 }
 
 a{
     color: var(--accent);
+    text-decoration: underline;
 }
 </style>
 
@@ -287,13 +303,11 @@ Better:
 </div>
 
 <div class="card">
-
 <h2>One More Thing</h2>
 
 <p>
 If someone has already answered, avoid repeating them just to speak. Only chime in if their answer is incorrect, incomplete, or needs crucial clarification.
 </p>
-
 </div>
 
 </div>
@@ -302,19 +316,19 @@ If someone has already answered, avoid repeating them just to speak. Only chime 
 
 <h2>The CARES Checklist</h2>
 
-<p style="margin-top:12px">
+<p style="margin-top:12px; color:#e7e5e4;">
 Before sending your message, ask yourself:
 </p>
 
-<p style="margin-top:12px;font-size:1.1rem;line-height:1.8">
-✔ Is it <strong>Correct</strong>?<br>
-✔ Is it <strong>Actionable</strong>?<br>
-✔ Is it <strong>Relevant</strong>?<br>
-✔ Is it <strong>Efficient</strong>?<br>
-✔ Is it <strong>Specific</strong>?
+<p style="margin-top:16px; font-size:1.15rem; line-height:1.8; font-weight:700;">
+✔ Is it <span style="color:var(--accent);">Correct</span>?<br>
+✔ Is it <span style="color:var(--accent);">Actionable</span>?<br>
+✔ Is it <span style="color:var(--accent);">Relevant</span>?<br>
+✔ Is it <span style="color:var(--accent);">Efficient</span>?<br>
+✔ Is it <span style="color:var(--accent);">Specific</span>?
 </p>
 
-<p style="margin-top:24px;font-size:0.9rem;">
+<p style="margin-top:28px; font-size:0.85rem; color:var(--muted);">
 Made for communities that value helpful answers.
 </p>
 
